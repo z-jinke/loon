@@ -1,3 +1,5 @@
+//2024.12.20
+
 let url = $request.url;
 let body = $response.body;
 
@@ -24,7 +26,7 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/main\/init/.test(url)) {
 
 if (/^https:\/\/api\.coolapk\.com\/v6\/main\/indexV8/.test(url)) {
     let obj = JSON.parse(body);
-    if (obj.data && Array.isArray(obj.data)) {
+    if (obj.data) {
         obj.data = obj.data.filter(item => item.entityType === "feed");
     }
     body = JSON.stringify(obj);
@@ -43,7 +45,7 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?id/.test(url)) {
 
 if (/^https:\/\/api\.coolapk\.com\/v6\/page\/dataList/.test(url)) {
     let obj = JSON.parse(body);
-    if (obj.data && Array.isArray(obj.data)) {
+    if (obj.data) {
         const filterEntityIds = new Set([24309, 12889, 29176, 36279, 36278, 29213, 29178, 37755, 40133]);
         obj.data = obj.data.filter(item => item.entityId && !filterEntityIds.has(item.entityId));
     }
