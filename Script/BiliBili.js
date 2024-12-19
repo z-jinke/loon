@@ -1,12 +1,14 @@
+//2024.12.19
+
 let url = $request.url;
 let body = $response.body;
 
 if (/^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(url)) {
     let obj = JSON.parse(body);
-    if (obj.data && Array.isArray(obj.data.list)) {
-        for (let i = 0; i < obj.data.list.length; i++) {
-            obj.data.list[i].duration = 0;
-            obj.data.list[i].end_time = 999999999;
+    if (obj.data) {
+    for (let i = 0; i < obj.data.list.length; i++) {
+        obj.data.list[i].duration = 0;
+        obj.data.list[i].end_time = 999999999;
         }
     }
     body = JSON.stringify(obj);
@@ -15,7 +17,7 @@ if (/^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(url)) {
 
 if (/^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index/.test(url)) {
     let obj = JSON.parse(body);
-    if (obj.data && Array.isArray(obj.data.items)) {
+    if (obj.data) {
         obj.data.items = obj.data.items.filter(item => item.goto === "av");
         if (obj.data.config) {
             obj.data.config.column = 1;
