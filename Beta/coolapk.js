@@ -46,7 +46,7 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?id/.test(url)) {
 if (/^https:\/\/api\.coolapk\.com\/v6\/page\/dataList/.test(url)) {
     let obj = JSON.parse(body);
     if (obj.data) {
-        const filterEntityIds = new Set([24309, 12889, 29176, 36279, 36278, 29213, 29178, 37755, 40133]);
+        const filterEntityIds = new Set([24309, 12889, 29176, 36279, 36278, 29213, 29178, 37755, 40133, 20099]);
         obj.data = obj.data.filter(item => item.entityId && !filterEntityIds.has(item.entityId));
     }
     body = JSON.stringify(obj);
