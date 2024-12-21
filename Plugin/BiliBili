@@ -4,7 +4,7 @@
 #!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/bilibili.png
 
 [Rule]
-AND,((PROTOCOL,TCP),(IP-CIDR,111.6.167.135/24)),REJECT-DROP
+AND,((PROTOCOL,TCP),(IP-CIDR,111.6.167.0/24)),REJECT-DROP
 
 [Rewrite]
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/show reject-200
