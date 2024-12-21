@@ -3,14 +3,8 @@
 #!author = z-jinke
 #!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/bilibili.png
 
-[Rule]
-AND,((PROTOCOL,TCP),(IP-CIDR,111.6.167.0/24)),REJECT-DROP
-
 [Rewrite]
-^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/show reject-200
-^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-200
-^https:\/\/api\.bilibili\.com\/x\/vip\/ads reject-200
-^https:\/\/api\.bilibili\.com\/pgc\/season\/player\/cards reject-200
+^https:\/\/(app|api)\.bilibili\.com\/x\/(v2\/splash\/show|vip\/ads) reject-200
 
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/bilibili.js, requires-body=true, timeout=60, tag=响应修改
