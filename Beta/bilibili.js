@@ -1,4 +1,4 @@
-//2024.12.20
+//2024.12.21
 
 let url = $request.url;
 let body = $response.body;
@@ -17,7 +17,7 @@ if (/^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(url)) {
 if (/^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index/.test(url)) {
     let obj = JSON.parse(body);
     if (obj.data) {
-        obj.data.items = obj.data.items.filter(item => item.goto === "av");
+        obj.data.items = obj.data.items.filter(item => item.goto === "av" && item.card_goto === "av");
         if (obj.data.config) {
             obj.data.config.column = 1;
         }
