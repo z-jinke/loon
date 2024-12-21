@@ -7,6 +7,7 @@
 ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/show reject-200
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-200
 ^https:\/\/api\.bilibili\.com\/x\/vip\/ads reject-200
+^https:\/\/api\.bilibili\.com\/pgc\/season\/player\/cards reject-200
 
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/bilibili.js, requires-body=true, timeout=60, tag=响应修改
