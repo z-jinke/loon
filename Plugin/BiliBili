@@ -2,8 +2,7 @@
 #!desc = 精简去除广告
 #!author = z-jinke,kokoryh,RuCu6
 #!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/bilibili.png
-#!system = iOS,iPadOS
-#!system_version = 15
+#!system = iOS iPadOS
 
 [Rewrite]
 ^https:\/\/(app|api)\.bilibili\.com\/x\/(v2\/splash\/show|vip\/ads) reject-dict
