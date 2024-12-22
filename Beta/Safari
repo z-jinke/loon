@@ -1,0 +1,9 @@
+let url = $request.url;
+
+// 判断是否是 www.google.cn
+if (/www\.google\.cn/.test(url)) {
+    // 将 URL 中的域名替换为 www.google.com
+    url = url.replace("www.google.cn", "www.google.com");
+}
+
+$done({ response: { status: 302, headers: { Location: url } } });
