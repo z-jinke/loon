@@ -2,6 +2,7 @@
 #!desc = 精简去除广告
 #!author = Maasea
 #!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/youtube.png
+#!system = iOS iPadOS
 
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.*oad reject-dict
