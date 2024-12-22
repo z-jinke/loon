@@ -1,0 +1,10 @@
+#!name = Safari
+#!desc = 重定向谷歌引擎
+#!author = z-jinke
+#!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/safari.png
+
+[Script]
+http-request ^https?:\/\/www\.google\.cn script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/safari.js
+
+[MITM]
+hostname = www.google.cn
