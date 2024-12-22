@@ -1,24 +1,25 @@
 #!name = BiliBili
 #!desc = 精简去除广告
-#!author = z-jinke
+#!author = z-jinke,kokoryh,RuCu6
 #!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/bilibili.png
+
+[Rule]
+URL-REGEX,"^http:\/\/upos-sz-static\.bilivideo\.com\/ssaxcode\/\w{2}\/\w{2}\/\w{32}-1-SPLASH",REJECT-DICT
+URL-REGEX,"^http:\/\/[\d\.]+:8000\/v1\/resource\/\w{32}-1-SPLASH",REJECT-DICT
 
 [Rewrite]
 ^https:\/\/(app|api)\.bilibili\.com\/x\/(v2\/splash\/show|vip\/ads) reject-dict
 ^https:\/\/(app|api)\.bilibili\.com\/(x\/mengqi\/v1\/resource|x\/resource\/peak\/download) reject-dict
-^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? reject-dict
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ reject-dict
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.view\.v1\.View\/TFInfo$ url reject-dict
 
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/bilibili.js, requires-body=true, timeout=60, tag=响应修改
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/bilibili.js, requires-body=true, timeout=60, tag=响应修改
 http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2 script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/bilibili.js, requires-body=true, timeout=60, tag=响应修改
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine|ipad) script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/bilibili.js, requires-body=true, timeout=60, tag=响应修改
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(?:playurl\.v1\.PlayURL\/PlayView|playerunite\.v1\.Player\/PlayViewUnite|view\.v1\.View\/(?:View|ViewProgress)|viewunite\.v1\.View\/(?:RelatesFeed|View)|interface\.v1\.Teenagers\/ModeStatus)$ script-path=https://raw.githubusercontent.com/kokoryh/Script/master/js/bilibili.protobuf.js,requires-body=true,binary-body-mode=true,tag=响应修改
 
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true, tag=响应修改
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus$ script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true, tag=响应修改
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.main\.community\.reply\.v1\.Reply\/MainList$ script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true, tag=响应修改
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.(?:view\.v1\.View\/(?:View|ViewProgress)|viewunite\.v1\.View\/(?:RelatesFeed|View))$ script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true, tag=响应修改
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/(?:bilibili\.app\.playurl\.v1\.PlayURL\/PlayView|bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite)$ script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js, requires-body=true, binary-body-mode=true, tag=响应修改
 
 [MITM]
-hostname = app.bilibili.com,api.bilibili.com,api.live.bilibili.com,grpc.biliapi.net
+hostname = app.bilibili.com,api.bilibili.com,grpc.biliapi.net
