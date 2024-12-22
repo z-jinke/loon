@@ -3,6 +3,9 @@
 #!author = z-jinke
 #!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/bilibili.png
 
+[Rule]
+AND,((PROTOCOL,TCP),(IP-CIDR,111.6.167.0/24)),REJECT
+
 [Rewrite]
 ^https:\/\/(app|api)\.bilibili\.com\/x\/(v2\/splash\/show|vip\/ads) reject-200
 
