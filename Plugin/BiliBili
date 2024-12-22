@@ -4,7 +4,9 @@
 #!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/bilibili.png
 
 [Rewrite]
-^https:\/\/(app|api)\.bilibili\.com\/x\/(v2\/splash\/show|vip\/ads) reject-200
+^https:\/\/(app|api)\.bilibili\.com\/x\/(v2\/splash\/show|vip\/ads) reject-dict
+^https:\/\/(app|api)\.bilibili\.com\/(x\/mengqi\/v1\/resource|x\/resource\/peak\/download) reject-dict
+^https:\/\/api\.live\.bilibili\.com\/xlive\/e-commerce-interface\/v1\/ecommerce-user\/get_shopping_info\? reject-dict
 
 [Script]
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/bilibili.js, requires-body=true, timeout=60, tag=响应修改
@@ -13,4 +15,4 @@ http-response ^https:\/\/app\.bilibili\.com\/x\/resource\/show\/tab\/v2 script-p
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine|ipad) script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/bilibili.js, requires-body=true, timeout=60, tag=响应修改
 
 [MITM]
-hostname = app.bilibili.com,api.bilibili.com
+hostname = app.bilibili.com,api.bilibili.com,api.live.bilibili.com
