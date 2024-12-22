@@ -6,6 +6,5 @@
 [Script]
 http-request ^https?:\/\/www\.google\.cn script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Beta/safari.js, tag=请求修改
 
-
 [MITM]
 hostname = www.google.cn
