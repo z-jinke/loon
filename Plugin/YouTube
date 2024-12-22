@@ -3,6 +3,9 @@
 #!author = Maasea
 #!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/youtube.png
 
+[Rule]
+AND,((PROTOCOL,QUIC),(DOMAIN-KEYWORD,google)),REJECT-DROP
+
 [Rewrite]
 ^https:\/\/[\w-]+\.googlevideo\.com\/initplayback\?.*oad reject-200
 
