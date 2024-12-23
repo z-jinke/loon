@@ -17,7 +17,7 @@ if (/^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(url)) {
 if (/^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\?/.test(url)) {
     let obj = JSON.parse(body);
     if (obj.data) {
-        obj.data.type = ""
+        obj.data = obj.data.filter(item => item.type !== "recommend");
     }
     body = JSON.stringify(obj);
     $done({ body });
