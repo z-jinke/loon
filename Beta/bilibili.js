@@ -14,6 +14,15 @@ if (/^https:\/\/app\.bilibili\.com\/x\/v2\/splash\/list/.test(url)) {
     $done({ body: JSON.stringify(obj) });
 }
 
+if (/^https:\/\/app\.bilibili\.com\/x\/v2\/search\/square\?/.test(url)) {
+    let obj = JSON.parse(body);
+    if (obj.data) {
+        obj.data.type = ""
+    }
+    body = JSON.stringify(obj);
+    $done({ body });
+}
+
 if (/^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index/.test(url)) {
     let obj = JSON.parse(body);
     if (obj.data) {
