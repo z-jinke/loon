@@ -24,15 +24,6 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/main\/init/.test(url)) {
     $done({ body });
 }
 
-if (/^https:\/\/api\.coolapk\.com\/v6\/search/.test(url)) {
-    let obj = JSON.parse(body);
-    if (obj.data) {
-        obj.data = obj.data.filter(item => item.entityTemplate !== "hotSearch" && item.entityTemplate !== "searchHotListCard");
-    }
-    body = JSON.stringify(obj);
-    $done({ body });
-}
-
 if (/^https:\/\/api\.coolapk\.com\/v6\/main\/indexV8/.test(url)) {
     let obj = JSON.parse(body);
     if (obj.data) {
