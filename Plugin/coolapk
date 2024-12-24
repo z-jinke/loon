@@ -5,7 +5,7 @@
 
 
 [Rewrite]
-^https:\/\/api\.coolapk\.com\/v6\/search mock-response-body data-type=json data="?" status-code=200
+^https:\/\/api\.coolapk\.com\/v6\/search mock-response-body data-type=json data="{}" status-code=200
 
   
 [Script]
