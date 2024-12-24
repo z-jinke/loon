@@ -6,6 +6,7 @@
   
 [Script]
 http-response ^https:\/\/api\.coolapk\.com\/v6\/main\/init script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/coolapk.js, requires-body=true, timeout=60, tag=响应修改
+http-response ^https:\/\/api\.coolapk\.com\/v6\/search script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/coolapk.js, requires-body=true, timeout=60, tag=响应修改
 http-response ^https:\/\/api\.coolapk\.com\/v6\/main\/indexV8 script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/coolapk.js, requires-body=true, timeout=60, tag=响应修改
 http-response ^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?id script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/coolapk.js, requires-body=true, timeout=60, tag=响应修改
 http-response ^https:\/\/api\.coolapk\.com\/v6\/page\/dataList script-path = https://github.com/z-jinke/Loon/raw/refs/heads/main/Script/coolapk.js, requires-body=true, timeout=60, tag=响应修改
