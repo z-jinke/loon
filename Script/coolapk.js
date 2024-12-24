@@ -36,8 +36,8 @@ if (/^https:\/\/api\.coolapk\.com\/v6\/main\/indexV8/.test(url)) {
 if (/^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\?id/.test(url)) {
     let obj = JSON.parse(body);
     if (obj.data) {
-        obj.data.detailSponsorCard = ""
-        obj.data.include_goods = ""
+        delete obj.data.detailSponsorCard;
+        delete obj.data.include_goods;
     }
     body = JSON.stringify(obj);
     $done({ body });
