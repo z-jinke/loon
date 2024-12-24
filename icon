@@ -1,0 +1,61 @@
+{
+    "name": "图标",
+    "icons": [      
+        {
+            "name": "Loon",
+            "url": "https://raw.githubusercontent.com/cc63/ICON/main/icons/Loon.png"
+        },  
+        {
+            "name": "Telegram",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
+        },  
+        {
+            "name": "spotify",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png"
+        },
+        {
+            "name": "bilibili",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png"
+        },
+        {
+            "name": "Emby",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png"
+        },
+        {
+            "name": "wangyiyun",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png"
+        },
+        {
+            "name": "youtube",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png"
+        }, 
+        {
+            "name": "ChatGPT",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"
+        }, 
+        {
+            "name": "Porxy",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"
+        }, 
+        {
+            "name": "Netflix",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png"
+        },  
+        {
+            "name": "YouTubeMusic",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube_Music.png"
+        },  
+        {
+            "name": "Twitter",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Twitter.png"
+        },  
+        {
+            "name": "X",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/X.png"
+        },  
+        {
+            "name": "google",
+            "url": "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png"
+        }
+    ]
+}
