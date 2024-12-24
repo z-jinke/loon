@@ -5,7 +5,7 @@
 
 
 [Rewrite]
-^https:\/\/app\.bilibili\.com\/x\/(resource\/ip|resource\/show) reject-dict
+^https:\/\/app\.bilibili\.com\/x\/(resource\/ip|resource\/show|v2/splash/show) reject-dict
 ^https:\/\/api\.bilibili\.com\/x\/(web-interface|vip\/ads|v2\/dm\/qoe\/show) reject-dict
 
 
