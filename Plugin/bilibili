@@ -1,7 +1,7 @@
 #!name = BiliBili
 #!desc = 精简布局去除广告
 #!author = z-jinke,kokoryh,RuCu6
-#!icon = https://raw.githubusercontent.com/z-jinke/icon/refs/heads/main/png/bilibili.png
+#!icon = https://raw.githubusercontent.com/z-jinke/Loon/refs/heads/main/PNG/bilibili.png
 
 
 [Rewrite]
